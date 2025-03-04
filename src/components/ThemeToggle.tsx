@@ -22,33 +22,6 @@ const CryptoTracker = ({ theme }: CryptoTrackerProps) => {
 
     fetchCryptoPrices();
   }, []);
-
-  return (
-    <div
-      className={`p-6 rounded-lg shadow-md transition-colors duration-200 ${
-        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-900"
-      }`}
-    >
-      <h2 className="text-2xl font-bold mb-4">Crypto Price Tracker</h2>
-      <ul>
-        {cryptoData.length > 0 ? (
-          cryptoData.map((crypto) => (
-            <li
-              key={crypto.id}
-              className="flex justify-between py-2 border-b border-gray-300 dark:border-gray-600"
-            >
-              <span>
-                {crypto.name} ({crypto.symbol.toUpperCase()})
-              </span>
-              <span>${crypto.current_price.toLocaleString()}</span>
-            </li>
-          ))
-        ) : (
-          <p>Loading prices...</p>
-        )}
-      </ul>
-    </div>
-  );
 };
 
 export default CryptoTracker;
