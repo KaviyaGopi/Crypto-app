@@ -13,7 +13,7 @@ export default function SearchBar({ onSearch }) {
   };
 
   return (
-    <div className="relative w-full sm:w-64">
+    <div className="w-full mb-4">
       <input
         type="text"
         value={searchTerm}
